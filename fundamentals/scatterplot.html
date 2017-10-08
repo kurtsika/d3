@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <script src="../lib/d3.v3.js"></script>
+  <style>
+    div.bar {
+      display: inline-block;
+      width: 20px;
+      height: 75px;
+      /* We'll override this later */
+      background-color: teal;
+      margin:5px;
+    }
+    
+  </style>
+  
+</head>
+
+<body>
+
+  <script>
+   var dataset = [ ];
+   for (var i = 0; i < 25; i++) {           //Loop 25 times
+    var newNumber = Math.random() * 30;  //New random number (0-30)
+    dataset.push(Math.round(newNumber));             //Add new number to array
+}
+
+
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      .style("height", function(d) {
+    return d *5 + "px";
+});
+  </script>
+
+</body>
+
+</html>
