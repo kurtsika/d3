@@ -9,21 +9,20 @@
       height: 75px;
       /* We'll override this later */
       background-color: teal;
-      margin:5px;
+      margin: 5px;
     }
-    
   </style>
-  
+
 </head>
 
 <body>
 
   <script>
-   var dataset = [ ];
-   for (var i = 0; i < 25; i++) {           //Loop 25 times
-    var newNumber = Math.random() * 30;  //New random number (0-30)
-    dataset.push(Math.round(newNumber));             //Add new number to array
-}
+    var dataset = [];
+    for (var i = 0; i < 25; i++) {           //Loop 25 times
+      var newNumber = Math.random() * 30;  //New random number (0-30)
+      dataset.push(Math.round(newNumber));             //Add new number to array
+    }
 
 
     d3.select("body").selectAll("div")
@@ -31,9 +30,9 @@
       .enter()
       .append("div")
       .attr("class", "bar")
-      .style("height", function(d) {
-    return d *5 + "px";
-});
+      .style("height", function (d) {
+        return d * 5 + "px";
+      });
   </script>
 
 </body>
