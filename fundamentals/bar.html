@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <script src="../lib/d3.v3.js"></script>
+
+  <style>
+  </style>
+</head>
+
+<body>
+
+
+  <script>
+    var dataSet = [1, 3, 5, 7, 10, 15, 20, 30]
+
+    var max = d3.max(dataSet);
+    var length = dataSet.length;
+  
+    var w = 500;
+    var sectorWidth=w/length;
+    var h = 100;
+    var svg = d3.select("body").append("svg").style("overflow", "visible")
+      .attr("width", w)
+      .attr("height", h);
+    svg.selectAll("rect").data(dataSet)
+      .enter().append("rect")
+      .attr("x", function (d, i) { return i * sectorWidth })
+      .attr("y", function (d, i) { return max * 10 - d * 10 })
+      .attr("width",sectorWidth*0.8)
+      .attr("height", function (d) { return d * 10 });
+
+
+
+
+  </script>
+
+</body>
+
+</html>
